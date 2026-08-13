@@ -1,0 +1,22 @@
+# Segredos e configuração local — nunca commitar
+.env
+.env.*
+*.pem
+*.key
+
+# Dependências (caso um build step seja adicionado no futuro)
+node_modules/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,5 @@
+# TROCAR pelo contato real antes de publicar (RFC 9116)
+Contact: mailto:seguranca@SEU-DOMINIO-AQUI
+Expires: 2027-08-13T00:00:00.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://SEU-DOMINIO-AQUI/.well-known/security.txt

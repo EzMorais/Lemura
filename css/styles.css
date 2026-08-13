@@ -1,0 +1,108 @@
+/* ---------- Fonts ---------- */
+body { font-family: 'Figtree', sans-serif; }
+.font-mono { font-family: 'Space Mono', monospace; }
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Scroll-reveal movement ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Marquee movement ---------- */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 24s linear infinite; }
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* ---------- Placeholder media pattern (sem fotos reais ainda) ---------- */
+.pattern-fill {
+  background-image: repeating-linear-gradient(135deg, #F5F5F5, #F5F5F5 10px, #FFFFFF 10px, #FFFFFF 20px);
+}
+
+/* ---------- Fotos de referência (substituir pelas fotos reais) ---------- */
+.reference-photo {
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.reference-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reference-photo:hover img { transform: scale(1.025); }
+.photo-label {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.9);
+  color: #737373;
+  font-size: 0.875rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+}
+
+/* ---------- Header nav mobile ---------- */
+.nav-panel {
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-panel.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- FAQ accordion movement ---------- */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.faq-panel > div { overflow: hidden; }
+.faq-item.is-open .faq-panel { grid-template-rows: 1fr; }
+.faq-item.is-open .faq-chevron { transform: rotate(90deg); }
+.faq-chevron { transition: transform 0.3s ease; }
+
+/* ---------- Availability donut ---------- */
+.donut { transform: rotate(-90deg); }
+.donut__track { fill: none; stroke: rgba(255,255,255,0.12); stroke-width: 14; }
+.donut__value {
+  fill: none;
+  stroke: #ebebfc;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-dasharray: 502.4;
+  stroke-dashoffset: 345.4; /* 5/16 preenchido */
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- CTA icon-swap movement ---------- */
+.btn-arrow { position: relative; overflow: hidden; display: inline-flex; width: 20px; height: 20px; }
+.btn-arrow span {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-arrow span:last-child { transform: translate(-130%, 130%); }
+.group:hover .btn-arrow span:first-child { transform: translate(130%, -130%); }
+.group:hover .btn-arrow span:last-child { transform: translate(0, 0); }
