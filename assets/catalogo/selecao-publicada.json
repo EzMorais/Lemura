@@ -1,0 +1,760 @@
+[
+  {
+    "chave": "IMG_7357",
+    "arquivo": "IMG_7357.JPG",
+    "categoria": "fachada",
+    "titulo": "Fachada diagonal",
+    "detalhe": "Letreiro, entrada e número do imóvel",
+    "dimensao_original": "5184x3456",
+    "dimensao_publicada": "1600x1067",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.0,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria-fachada.jpg",
+    "destinos": [
+      "assets/galeria-fachada.jpg",
+      "assets/og-image.jpg",
+      "assets/galeria/fachada-diagonal.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria-fachada-480.jpg",
+      "assets/galeria-fachada-960.jpg"
+    ],
+    "visualizador": "assets/galeria-fachada-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7271",
+    "arquivo": "IMG_7271.JPG",
+    "categoria": "ambientes",
+    "titulo": "Varanda",
+    "detalhe": "Varanda do piso superior e vista",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria/varanda-vista.jpg",
+    "destinos": [
+      "assets/galeria/varanda-vista.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria/varanda-vista-480.jpg",
+      "assets/galeria/varanda-vista-960.jpg"
+    ],
+    "visualizador": "assets/galeria/varanda-vista-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7293",
+    "arquivo": "IMG_7293.JPG",
+    "categoria": "ambientes",
+    "titulo": "Área comum",
+    "detalhe": "Mesas e área de convivência no térreo",
+    "dimensao_original": "5184x3456",
+    "dimensao_publicada": "1600x1067",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria-area-comum.jpg",
+    "destinos": [
+      "assets/galeria-area-comum.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria-area-comum-480.jpg",
+      "assets/galeria-area-comum-960.jpg"
+    ],
+    "visualizador": "assets/galeria-area-comum-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7296",
+    "arquivo": "IMG_7296.JPG",
+    "categoria": "ambientes",
+    "titulo": "Corredor térreo",
+    "detalhe": "Circulação e vitrines de vidro",
+    "dimensao_original": "5184x3456",
+    "dimensao_publicada": "1600x1067",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.1,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria-corredor.jpg",
+    "destinos": [
+      "assets/galeria-corredor.jpg",
+      "assets/galeria/corredor-terreo.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria-corredor-480.jpg",
+      "assets/galeria-corredor-960.jpg"
+    ],
+    "visualizador": "assets/galeria-corredor-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7259",
+    "arquivo": "IMG_7259.JPG",
+    "categoria": "ambientes",
+    "titulo": "Área de convivência",
+    "detalhe": "Mesas e circulação no piso superior",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.03,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria/convivencia.jpg",
+    "destinos": [
+      "assets/galeria/convivencia.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria/convivencia-480.jpg",
+      "assets/galeria/convivencia-960.jpg"
+    ],
+    "visualizador": "assets/galeria/convivencia-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7264",
+    "arquivo": "IMG_7264.JPG",
+    "categoria": "ambientes",
+    "titulo": "Fachada e arquitetura",
+    "detalhe": "Perspectiva vertical da fachada",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.03,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria/arquitetura.jpg",
+    "destinos": [
+      "assets/galeria/arquitetura.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria/arquitetura-480.jpg",
+      "assets/galeria/arquitetura-960.jpg"
+    ],
+    "visualizador": "assets/galeria/arquitetura-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7366",
+    "arquivo": "IMG_7366.JPG",
+    "categoria": "ambientes",
+    "titulo": "Detalhe do letreiro",
+    "detalhe": "Letreiro Lemura em detalhe",
+    "dimensao_original": "5184x3456",
+    "dimensao_publicada": "1600x1067",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.0,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria/fachada-angulo.jpg",
+    "destinos": [
+      "assets/galeria/fachada-angulo.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria/fachada-angulo-480.jpg",
+      "assets/galeria/fachada-angulo-960.jpg"
+    ],
+    "visualizador": "assets/galeria/fachada-angulo-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7268",
+    "arquivo": "IMG_7268.JPG",
+    "categoria": "ambientes",
+    "titulo": "Circulação interna",
+    "detalhe": "Vista do corredor e das vitrines",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.04,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria-cowork.jpg",
+    "destinos": [
+      "assets/galeria-cowork.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria-cowork-480.jpg",
+      "assets/galeria-cowork-960.jpg"
+    ],
+    "visualizador": "assets/galeria-cowork-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7242",
+    "arquivo": "IMG_7242.JPG",
+    "categoria": "ambientes",
+    "titulo": "Banheiro",
+    "detalhe": "Banheiro de uso comum",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria/banheiro-comum.jpg",
+    "destinos": [
+      "assets/galeria/banheiro-comum.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria/banheiro-comum-480.jpg",
+      "assets/galeria/banheiro-comum-960.jpg"
+    ],
+    "visualizador": "assets/galeria/banheiro-comum-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7348",
+    "arquivo": "IMG_7348.JPG",
+    "categoria": "ambientes",
+    "titulo": "Painel do hall",
+    "detalhe": "Placas de identificação das salas",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.04,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria/painel-hall.jpg",
+    "destinos": [
+      "assets/galeria/painel-hall.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria/painel-hall-480.jpg",
+      "assets/galeria/painel-hall-960.jpg"
+    ],
+    "visualizador": "assets/galeria/painel-hall-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7361",
+    "arquivo": "IMG_7361.JPG",
+    "categoria": "ambientes",
+    "titulo": "Entrada e escada",
+    "detalhe": "Acesso interno ao piso superior",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria/entrada-escada.jpg",
+    "destinos": [
+      "assets/galeria/entrada-escada.jpg",
+      "assets/galeria-entrada.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria/entrada-escada-480.jpg",
+      "assets/galeria/entrada-escada-960.jpg"
+    ],
+    "visualizador": "assets/galeria/entrada-escada-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7363",
+    "arquivo": "IMG_7363.JPG",
+    "categoria": "fachada",
+    "titulo": "Fachada em perspectiva",
+    "detalhe": "Fachada da galeria vista de baixo",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.0,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/galeria/fachada-perspectiva.jpg",
+    "destinos": [
+      "assets/galeria/fachada-perspectiva.jpg"
+    ],
+    "responsivas": [
+      "assets/galeria/fachada-perspectiva-480.jpg",
+      "assets/galeria/fachada-perspectiva-960.jpg"
+    ],
+    "visualizador": "assets/galeria/fachada-perspectiva-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7292",
+    "arquivo": "IMG_7292.JPG",
+    "categoria": "salas",
+    "titulo": "Espaço A",
+    "detalhe": "Sala disponível com vitrine para o corredor",
+    "dimensao_original": "5184x3456",
+    "dimensao_publicada": "1600x1067",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.04,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/salas/vaga-a/principal.jpg",
+    "destinos": [
+      "assets/salas/vaga-a/principal.jpg"
+    ],
+    "responsivas": [
+      "assets/salas/vaga-a/principal-480.jpg",
+      "assets/salas/vaga-a/principal-960.jpg"
+    ],
+    "visualizador": "assets/salas/vaga-a/principal-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7299",
+    "arquivo": "IMG_7299.JPG",
+    "categoria": "salas",
+    "titulo": "Espaço A",
+    "detalhe": "Vista interna do Espaço A",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.04,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/salas/vaga-a/interior.jpg",
+    "destinos": [
+      "assets/salas/vaga-a/interior.jpg"
+    ],
+    "responsivas": [
+      "assets/salas/vaga-a/interior-480.jpg",
+      "assets/salas/vaga-a/interior-960.jpg"
+    ],
+    "visualizador": "assets/salas/vaga-a/interior-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7295",
+    "arquivo": "IMG_7295.JPG",
+    "categoria": "salas",
+    "titulo": "Espaço B",
+    "detalhe": "Sala disponível junto à área de convivência",
+    "dimensao_original": "5184x3456",
+    "dimensao_publicada": "1600x1067",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.04,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/salas/vaga-b/principal.jpg",
+    "destinos": [
+      "assets/salas/vaga-b/principal.jpg"
+    ],
+    "responsivas": [
+      "assets/salas/vaga-b/principal-480.jpg",
+      "assets/salas/vaga-b/principal-960.jpg"
+    ],
+    "visualizador": "assets/salas/vaga-b/principal-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7300",
+    "arquivo": "IMG_7300.JPG",
+    "categoria": "salas",
+    "titulo": "Espaço B",
+    "detalhe": "Vista interna do Espaço B",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.04,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/salas/vaga-b/interior.jpg",
+    "destinos": [
+      "assets/salas/vaga-b/interior.jpg"
+    ],
+    "responsivas": [
+      "assets/salas/vaga-b/interior-480.jpg",
+      "assets/salas/vaga-b/interior-960.jpg"
+    ],
+    "visualizador": "assets/salas/vaga-b/interior-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7288",
+    "arquivo": "IMG_7288.JPG",
+    "categoria": "salas",
+    "titulo": "Espaço C",
+    "detalhe": "Sala disponível no piso superior",
+    "dimensao_original": "5184x3456",
+    "dimensao_publicada": "1600x1067",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.04,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/salas/vaga-c/principal.jpg",
+    "destinos": [
+      "assets/salas/vaga-c/principal.jpg"
+    ],
+    "responsivas": [
+      "assets/salas/vaga-c/principal-480.jpg",
+      "assets/salas/vaga-c/principal-960.jpg"
+    ],
+    "visualizador": "assets/salas/vaga-c/principal-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7287",
+    "arquivo": "IMG_7287.JPG",
+    "categoria": "salas",
+    "titulo": "Espaço C",
+    "detalhe": "Banheiro privativo do Espaço C",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/salas/vaga-c/banheiro.jpg",
+    "destinos": [
+      "assets/salas/vaga-c/banheiro.jpg"
+    ],
+    "responsivas": [
+      "assets/salas/vaga-c/banheiro-480.jpg",
+      "assets/salas/vaga-c/banheiro-960.jpg"
+    ],
+    "visualizador": "assets/salas/vaga-c/banheiro-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7339",
+    "arquivo": "IMG_7339.JPG",
+    "categoria": "lojistas",
+    "titulo": "Doces de Elisa",
+    "detalhe": "Ambiente interno da confeitaria",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/doces-de-elisa/capa.jpg",
+    "destinos": [
+      "assets/lojas/doces-de-elisa/capa.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/doces-de-elisa/capa-480.jpg",
+      "assets/lojas/doces-de-elisa/capa-960.jpg"
+    ],
+    "visualizador": "assets/lojas/doces-de-elisa/capa-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7341",
+    "arquivo": "IMG_7341.JPG",
+    "categoria": "lojistas",
+    "titulo": "Doces de Elisa",
+    "detalhe": "Vitrine refrigerada com doces e sobremesas",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/doces-de-elisa/vitrine.jpg",
+    "destinos": [
+      "assets/lojas/doces-de-elisa/vitrine.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/doces-de-elisa/vitrine-480.jpg",
+      "assets/lojas/doces-de-elisa/vitrine-960.jpg"
+    ],
+    "visualizador": "assets/lojas/doces-de-elisa/vitrine-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7285",
+    "arquivo": "IMG_7285.JPG",
+    "categoria": "lojistas",
+    "titulo": "Yandê Saúde & Bem Estar",
+    "detalhe": "Recepção da clínica",
+    "dimensao_original": "5184x3456",
+    "dimensao_publicada": "1600x1067",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/yande/capa.jpg",
+    "destinos": [
+      "assets/lojas/yande/capa.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/yande/capa-480.jpg",
+      "assets/lojas/yande/capa-960.jpg"
+    ],
+    "visualizador": "assets/lojas/yande/capa-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7179",
+    "arquivo": "IMG_7179.JPG",
+    "categoria": "lojistas",
+    "titulo": "Yandê Saúde & Bem Estar",
+    "detalhe": "Maca preparada para atendimento",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/yande/massoterapia.jpg",
+    "destinos": [
+      "assets/lojas/yande/massoterapia.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/yande/massoterapia-480.jpg",
+      "assets/lojas/yande/massoterapia-960.jpg"
+    ],
+    "visualizador": "assets/lojas/yande/massoterapia-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7205",
+    "arquivo": "IMG_7205.JPG",
+    "categoria": "lojistas",
+    "titulo": "Yandê Saúde & Bem Estar",
+    "detalhe": "Sala de atendimento individual",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/yande/atendimento.jpg",
+    "destinos": [
+      "assets/lojas/yande/atendimento.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/yande/atendimento-480.jpg",
+      "assets/lojas/yande/atendimento-960.jpg"
+    ],
+    "visualizador": "assets/lojas/yande/atendimento-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7217",
+    "arquivo": "IMG_7217.JPG",
+    "categoria": "lojistas",
+    "titulo": "Yandê Saúde & Bem Estar",
+    "detalhe": "Espaço interno de atendimento",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/yande/grupo.jpg",
+    "destinos": [
+      "assets/lojas/yande/grupo.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/yande/grupo-480.jpg",
+      "assets/lojas/yande/grupo-960.jpg"
+    ],
+    "visualizador": "assets/lojas/yande/grupo-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7236",
+    "arquivo": "IMG_7236.JPG",
+    "categoria": "lojistas",
+    "titulo": "Espaço ZOE",
+    "detalhe": "Ateliê e espaço de atividades",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/espaco-zoe/capa.jpg",
+    "destinos": [
+      "assets/lojas/espaco-zoe/capa.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/espaco-zoe/capa-480.jpg",
+      "assets/lojas/espaco-zoe/capa-960.jpg"
+    ],
+    "visualizador": "assets/lojas/espaco-zoe/capa-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7230",
+    "arquivo": "IMG_7230.JPG",
+    "categoria": "lojistas",
+    "titulo": "Espaço ZOE",
+    "detalhe": "Mesa preparada para uma oficina",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/espaco-zoe/oficina.jpg",
+    "destinos": [
+      "assets/lojas/espaco-zoe/oficina.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/espaco-zoe/oficina-480.jpg",
+      "assets/lojas/espaco-zoe/oficina-960.jpg"
+    ],
+    "visualizador": "assets/lojas/espaco-zoe/oficina-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7232",
+    "arquivo": "IMG_7232.JPG",
+    "categoria": "lojistas",
+    "titulo": "Espaço ZOE",
+    "detalhe": "Materiais organizados no ateliê",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/espaco-zoe/materiais.jpg",
+    "destinos": [
+      "assets/lojas/espaco-zoe/materiais.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/espaco-zoe/materiais-480.jpg",
+      "assets/lojas/espaco-zoe/materiais-960.jpg"
+    ],
+    "visualizador": "assets/lojas/espaco-zoe/materiais-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7158",
+    "arquivo": "IMG_7158.JPG",
+    "categoria": "lojistas",
+    "titulo": "Elias & Krepski Advogados",
+    "detalhe": "Entrada do escritório",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.03,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/elias-krepski/capa.jpg",
+    "destinos": [
+      "assets/lojas/elias-krepski/capa.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/elias-krepski/capa-480.jpg",
+      "assets/lojas/elias-krepski/capa-960.jpg"
+    ],
+    "visualizador": "assets/lojas/elias-krepski/capa-visualizador.jpg"
+  },
+  {
+    "chave": "IMG_7165",
+    "arquivo": "IMG_7165.JPG",
+    "categoria": "lojistas",
+    "titulo": "Elias & Krepski Advogados",
+    "detalhe": "Sala de reunião",
+    "dimensao_original": "3456x5184",
+    "dimensao_publicada": "1600x2400",
+    "originais_preservados": true,
+    "tratamento": {
+      "exposicao_ev": 0.02,
+      "lift_sombras": 0.025,
+      "contraste": 1.025,
+      "nitidez": 1.14,
+      "recorte": false
+    },
+    "publicada": "assets/lojas/elias-krepski/reuniao.jpg",
+    "destinos": [
+      "assets/lojas/elias-krepski/reuniao.jpg"
+    ],
+    "responsivas": [
+      "assets/lojas/elias-krepski/reuniao-480.jpg",
+      "assets/lojas/elias-krepski/reuniao-960.jpg"
+    ],
+    "visualizador": "assets/lojas/elias-krepski/reuniao-visualizador.jpg"
+  }
+]

@@ -1,4 +1,8 @@
+# Arquivo gerado por scripts/gerar.mjs. Não edite à mão.
+# loja.html é a pré-visualização e já se declara noindex;
+# o endereço público de cada loja é /lojas/<slug>/
+
 User-agent: *
 Allow: /
 
-Sitemap: https://SEU-DOMINIO-AQUI/sitemap.xml
+Sitemap: https://lemura.com.br/sitemap.xml

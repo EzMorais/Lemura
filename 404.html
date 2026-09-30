@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Página de erro do site.
+  <base href="/"> faz os caminhos relativos funcionarem mesmo quando o
+  servidor entrega este arquivo em um endereço qualquer.
+  Se um dia o site for publicado em uma subpasta, ajuste para
+  <base href="/subpasta/">.
+-->
+<base href="/">
+<title>Página não encontrada | Galeria Lemura</title>
+<meta name="description" content="A página procurada não existe mais. Conheça as lojas da Galeria Lemura, em Porangaba/SP.">
+<meta name="robots" content="noindex, follow">
+
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  base-uri 'self';
+  object-src 'none';
+  form-action 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  font-src 'self';
+  img-src 'self';
+  connect-src 'self';
+  upgrade-insecure-requests;
+">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/vitrine.css">
+</head>
+<body class="lm-body" data-base="" data-ativo="">
+
+<a class="lm-pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="lm-pagina">
+
+  <div id="lm-header" style="min-height:68px"></div>
+
+  <main id="conteudo">
+    <section class="lm-bloco">
+      <p class="lm-eyebrow">Erro 404</p>
+      <h1 class="lm-titulo">Esta página não está mais aqui.</h1>
+      <p class="lm-subtitulo">O endereço pode ter mudado, ou a loja que você procura saiu da galeria. Veja quem está na Lemura hoje.</p>
+      <div class="lm-acoes" style="margin-top:0">
+        <a class="lm-btn" href="lojas.html">Ver as lojas da galeria</a>
+        <a class="lm-btn lm-btn--linha" href="index.html">Voltar ao início</a>
+      </div>
+    </section>
+
+    <section class="lm-secao" style="margin-top:.75rem">
+      <h2 class="lm-titulo" style="font-size:1.5rem">Lojas da Lemura</h2>
+      <div class="lm-grade lm-grade--3" id="lm-grade-404"></div>
+    </section>
+  </main>
+
+  <div id="lm-rodape"></div>
+
+</div>
+
+<div id="lm-flutuante"></div>
+
+<script src="js/lemura-config.js"></script>
+<script src="data/lojistas.js"></script>
+<script src="js/lemura-templates.js"></script>
+<script src="js/lemura-core.js"></script>
+<script src="js/pagina-simples.js"></script>
+<script src="js/erro-404.js"></script>
+</body>
+</html>

@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo Completo das 184 Fotos | Galeria Lemura</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  :root {
+    --cor-fundo: #0c0d0e;
+    --cor-card: #151719;
+    --cor-borda: #25282c;
+    --cor-texto: #e2e4e8;
+    --cor-mutado: #8b929a;
+    --cor-destaque: #e3a953;
+    --cor-accent: #2e6648;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Figtree', system-ui, sans-serif;
+    padding: 1.5rem;
+    line-height: 1.5;
+  }
+  header {
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  h1 { font-size: 1.75rem; font-weight: 800; color: #fff; }
+  .kicker { font-family: 'Space+Mono', monospace; color: var(--cor-destaque); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-filtro {
+    background: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-filtro:hover, .btn-filtro.ativo {
+    background: var(--cor-destaque);
+    color: #000;
+    border-color: var(--cor-destaque);
+  }
+  .grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .card {
+    background: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    border-color: var(--cor-destaque);
+  }
+  .card__img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background: #000;
+    cursor: pointer;
+  }
+  .card__corpo {
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .card__cabeca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+  }
+  .card__chave {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    color: var(--cor-destaque);
+    font-size: 0.85rem;
+  }
+  .card__badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    background: #25282c;
+    color: #fff;
+  }
+  .card__badge--ok { background: var(--cor-accent); }
+  .card__titulo { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+  .card__detalhe { font-size: 0.8rem; color: var(--cor-mutado); line-height: 1.4; flex-grow: 1; }
+  .card__dim { font-size: 0.7rem; font-family: 'Space Mono', monospace; color: #626a74; margin-top: 0.5rem; }
+
+  /* Modal de zoom */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .modal.aberto { display: flex; }
+  .modal__conteudo {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal__img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  .modal__info {
+    margin-top: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  .modal__fechar {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: #fff;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <p class="kicker">Galeria Lemura • Acervo Fotográfico Oficial</p>
+    <h1>Catálogo das 184 Fotos Reais</h1>
+    <p style="color: var(--cor-mutado); font-size: 0.9rem; margin-top: 0.25rem;">
+      Sessão de fotos de 16/12/2025. Arquivo: <code>wetransfer_img_7151-jpg_2026-08-21_1937.zip</code>
+    </p>
+  </div>
+  <div>
+    <span style="font-family: 'Space Mono', monospace; color: var(--cor-destaque); font-size: 1.1rem; font-weight: 700;">
+      184 fotos indexadas
+    </span>
+  </div>
+</header>
+
+<div class="filtros" id="filtros">
+  <button class="btn-filtro ativo" data-filtro="todos">Todas (184)</button>
+  <button class="btn-filtro" data-filtro="fachada">Fachada & Acessos</button>
+  <button class="btn-filtro" data-filtro="ambientes">Áreas Comuns & Varanda</button>
+  <button class="btn-filtro" data-filtro="salas">Salas Vagas (A, B, C)</button>
+  <button class="btn-filtro" data-filtro="lojistas">Lojistas Reais</button>
+  <button class="btn-filtro" data-filtro="odonto">Consultório Odonto</button>
+  <button class="btn-filtro" data-filtro="conhecido">Já Mapeadas</button>
+</div>
+
+<div class="grade" id="grade">
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7151.jpg" class="card__img" alt="Foto IMG_7151" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7151.jpg', 'IMG_7151', 'Foto IMG_7151', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7151</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7151</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7152.jpg" class="card__img" alt="Foto IMG_7152" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7152.jpg', 'IMG_7152', 'Foto IMG_7152', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7152</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7152</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7154.jpg" class="card__img" alt="Foto IMG_7154" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7154.jpg', 'IMG_7154', 'Foto IMG_7154', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7154</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7154</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7155.jpg" class="card__img" alt="Foto IMG_7155" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7155.jpg', 'IMG_7155', 'Foto IMG_7155', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7155</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7155</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7156.jpg" class="card__img" alt="Foto IMG_7156" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7156.jpg', 'IMG_7156', 'Foto IMG_7156', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7156</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7156</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7157.jpg" class="card__img" alt="Foto IMG_7157" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7157.jpg', 'IMG_7157', 'Foto IMG_7157', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7157</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7157</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7158.jpg" class="card__img" alt="Elias & Krepski - Entrada" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7158.jpg', 'IMG_7158', 'Elias & Krepski - Entrada', 'Porta do escritório jurídico')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7158</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Elias & Krepski - Entrada</h3>
+      <p class="card__detalhe">Porta do escritório jurídico</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7159.jpg" class="card__img" alt="Foto IMG_7159" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7159.jpg', 'IMG_7159', 'Foto IMG_7159', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7159</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7159</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7160.jpg" class="card__img" alt="Foto IMG_7160" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7160.jpg', 'IMG_7160', 'Foto IMG_7160', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7160</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7160</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7161.jpg" class="card__img" alt="Foto IMG_7161" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7161.jpg', 'IMG_7161', 'Foto IMG_7161', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7161</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7161</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7162.jpg" class="card__img" alt="Foto IMG_7162" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7162.jpg', 'IMG_7162', 'Foto IMG_7162', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7162</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7162</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7163.jpg" class="card__img" alt="Foto IMG_7163" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7163.jpg', 'IMG_7163', 'Foto IMG_7163', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7163</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7163</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7164.jpg" class="card__img" alt="Foto IMG_7164" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7164.jpg', 'IMG_7164', 'Foto IMG_7164', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7164</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7164</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7165.jpg" class="card__img" alt="Elias & Krepski - Sala de Reunião" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7165.jpg', 'IMG_7165', 'Elias & Krepski - Sala de Reunião', 'Mesa e ambiente corporativo')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7165</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Elias & Krepski - Sala de Reunião</h3>
+      <p class="card__detalhe">Mesa e ambiente corporativo</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7167.jpg" class="card__img" alt="Foto IMG_7167" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7167.jpg', 'IMG_7167', 'Foto IMG_7167', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7167</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7167</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7168.jpg" class="card__img" alt="Foto IMG_7168" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7168.jpg', 'IMG_7168', 'Foto IMG_7168', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7168</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7168</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7169.jpg" class="card__img" alt="Foto IMG_7169" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7169.jpg', 'IMG_7169', 'Foto IMG_7169', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7169</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7169</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7170.jpg" class="card__img" alt="Foto IMG_7170" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7170.jpg', 'IMG_7170', 'Foto IMG_7170', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7170</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7170</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7171.jpg" class="card__img" alt="Foto IMG_7171" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7171.jpg', 'IMG_7171', 'Foto IMG_7171', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7171</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7171</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7172.jpg" class="card__img" alt="Foto IMG_7172" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7172.jpg', 'IMG_7172', 'Foto IMG_7172', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7172</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7172</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7173.jpg" class="card__img" alt="Foto IMG_7173" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7173.jpg', 'IMG_7173', 'Foto IMG_7173', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7173</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7173</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7174.jpg" class="card__img" alt="Foto IMG_7174" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7174.jpg', 'IMG_7174', 'Foto IMG_7174', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7174</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7174</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7175.jpg" class="card__img" alt="Foto IMG_7175" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7175.jpg', 'IMG_7175', 'Foto IMG_7175', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7175</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7175</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="escritorio_servicos" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7176.jpg" class="card__img" alt="Foto IMG_7176" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7176.jpg', 'IMG_7176', 'Foto IMG_7176', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7176</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7176</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • escritorio_servicos</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7179.jpg" class="card__img" alt="Yandê - Massoterapia (Sala 8)" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7179.jpg', 'IMG_7179', 'Yandê - Massoterapia (Sala 8)', 'Maca de massagem, toalhas e ambiente relaxante')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7179</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Yandê - Massoterapia (Sala 8)</h3>
+      <p class="card__detalhe">Maca de massagem, toalhas e ambiente relaxante</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7180.jpg" class="card__img" alt="Foto IMG_7180" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7180.jpg', 'IMG_7180', 'Foto IMG_7180', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7180</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7180</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7181.jpg" class="card__img" alt="Foto IMG_7181" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7181.jpg', 'IMG_7181', 'Foto IMG_7181', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7181</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7181</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7182.jpg" class="card__img" alt="Foto IMG_7182" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7182.jpg', 'IMG_7182', 'Foto IMG_7182', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7182</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7182</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7183.jpg" class="card__img" alt="Foto IMG_7183" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7183.jpg', 'IMG_7183', 'Foto IMG_7183', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7183</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7183</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7184.jpg" class="card__img" alt="Foto IMG_7184" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7184.jpg', 'IMG_7184', 'Foto IMG_7184', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7184</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7184</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7185.jpg" class="card__img" alt="Foto IMG_7185" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7185.jpg', 'IMG_7185', 'Foto IMG_7185', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7185</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7185</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7186.jpg" class="card__img" alt="Foto IMG_7186" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7186.jpg', 'IMG_7186', 'Foto IMG_7186', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7186</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7186</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7187.jpg" class="card__img" alt="Foto IMG_7187" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7187.jpg', 'IMG_7187', 'Foto IMG_7187', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7187</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7187</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7188.jpg" class="card__img" alt="Foto IMG_7188" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7188.jpg', 'IMG_7188', 'Foto IMG_7188', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7188</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7188</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7189.jpg" class="card__img" alt="Foto IMG_7189" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7189.jpg', 'IMG_7189', 'Foto IMG_7189', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7189</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7189</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7190.jpg" class="card__img" alt="Foto IMG_7190" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7190.jpg', 'IMG_7190', 'Foto IMG_7190', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7190</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7190</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7191.jpg" class="card__img" alt="Foto IMG_7191" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7191.jpg', 'IMG_7191', 'Foto IMG_7191', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7191</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7191</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7192.jpg" class="card__img" alt="Foto IMG_7192" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7192.jpg', 'IMG_7192', 'Foto IMG_7192', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7192</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7192</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7193.jpg" class="card__img" alt="Foto IMG_7193" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7193.jpg', 'IMG_7193', 'Foto IMG_7193', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7193</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7193</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7194.jpg" class="card__img" alt="Foto IMG_7194" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7194.jpg', 'IMG_7194', 'Foto IMG_7194', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7194</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7194</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7195.jpg" class="card__img" alt="Foto IMG_7195" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7195.jpg', 'IMG_7195', 'Foto IMG_7195', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7195</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7195</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7196.jpg" class="card__img" alt="Foto IMG_7196" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7196.jpg', 'IMG_7196', 'Foto IMG_7196', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7196</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7196</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7197.jpg" class="card__img" alt="Foto IMG_7197" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7197.jpg', 'IMG_7197', 'Foto IMG_7197', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7197</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7197</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7198.jpg" class="card__img" alt="Foto IMG_7198" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7198.jpg', 'IMG_7198', 'Foto IMG_7198', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7198</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7198</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7199.jpg" class="card__img" alt="Foto IMG_7199" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7199.jpg', 'IMG_7199', 'Foto IMG_7199', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7199</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7199</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7200.jpg" class="card__img" alt="Foto IMG_7200" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7200.jpg', 'IMG_7200', 'Foto IMG_7200', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7200</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7200</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7201.jpg" class="card__img" alt="Foto IMG_7201" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7201.jpg', 'IMG_7201', 'Foto IMG_7201', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7201</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7201</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7202.jpg" class="card__img" alt="Foto IMG_7202" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7202.jpg', 'IMG_7202', 'Foto IMG_7202', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7202</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7202</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7203.jpg" class="card__img" alt="Foto IMG_7203" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7203.jpg', 'IMG_7203', 'Foto IMG_7203', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7203</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7203</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7204.jpg" class="card__img" alt="Foto IMG_7204" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7204.jpg', 'IMG_7204', 'Foto IMG_7204', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7204</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7204</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7205.jpg" class="card__img" alt="Yandê - Fisioterapia (Sala 6)" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7205.jpg', 'IMG_7205', 'Yandê - Fisioterapia (Sala 6)', 'Sala de atendimento individual de fisioterapia')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7205</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Yandê - Fisioterapia (Sala 6)</h3>
+      <p class="card__detalhe">Sala de atendimento individual de fisioterapia</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7206.jpg" class="card__img" alt="Foto IMG_7206" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7206.jpg', 'IMG_7206', 'Foto IMG_7206', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7206</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7206</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7207.jpg" class="card__img" alt="Foto IMG_7207" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7207.jpg', 'IMG_7207', 'Foto IMG_7207', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7207</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7207</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7209.jpg" class="card__img" alt="Foto IMG_7209" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7209.jpg', 'IMG_7209', 'Foto IMG_7209', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7209</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7209</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7210.jpg" class="card__img" alt="Foto IMG_7210" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7210.jpg', 'IMG_7210', 'Foto IMG_7210', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7210</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7210</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7211.jpg" class="card__img" alt="Foto IMG_7211" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7211.jpg', 'IMG_7211', 'Foto IMG_7211', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7211</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7211</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7212.jpg" class="card__img" alt="Foto IMG_7212" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7212.jpg', 'IMG_7212', 'Foto IMG_7212', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7212</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7212</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7213.jpg" class="card__img" alt="Foto IMG_7213" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7213.jpg', 'IMG_7213', 'Foto IMG_7213', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7213</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7213</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7214.jpg" class="card__img" alt="Foto IMG_7214" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7214.jpg', 'IMG_7214', 'Foto IMG_7214', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7214</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7214</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7215.jpg" class="card__img" alt="Foto IMG_7215" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7215.jpg', 'IMG_7215', 'Foto IMG_7215', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7215</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7215</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7217.jpg" class="card__img" alt="Yandê - Sala de atendimento" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7217.jpg', 'IMG_7217', 'Yandê - Sala de atendimento', 'Ambiente interno de atendimento')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7217</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Yandê - Sala de atendimento</h3>
+      <p class="card__detalhe">Ambiente interno de atendimento</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7218.jpg" class="card__img" alt="Foto IMG_7218" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7218.jpg', 'IMG_7218', 'Foto IMG_7218', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7218</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7218</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7219.jpg" class="card__img" alt="Foto IMG_7219" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7219.jpg', 'IMG_7219', 'Foto IMG_7219', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7219</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7219</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7220.jpg" class="card__img" alt="Foto IMG_7220" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7220.jpg', 'IMG_7220', 'Foto IMG_7220', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7220</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7220</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7221.jpg" class="card__img" alt="Foto IMG_7221" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7221.jpg', 'IMG_7221', 'Foto IMG_7221', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7221</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7221</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7222.jpg" class="card__img" alt="Foto IMG_7222" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7222.jpg', 'IMG_7222', 'Foto IMG_7222', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7222</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7222</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7223.jpg" class="card__img" alt="Foto IMG_7223" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7223.jpg', 'IMG_7223', 'Foto IMG_7223', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7223</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7223</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7224.jpg" class="card__img" alt="Foto IMG_7224" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7224.jpg', 'IMG_7224', 'Foto IMG_7224', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7224</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7224</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7225.jpg" class="card__img" alt="Foto IMG_7225" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7225.jpg', 'IMG_7225', 'Foto IMG_7225', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7225</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7225</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7227.jpg" class="card__img" alt="Foto IMG_7227" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7227.jpg', 'IMG_7227', 'Foto IMG_7227', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7227</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7227</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="saude_yande" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7228.jpg" class="card__img" alt="Foto IMG_7228" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7228.jpg', 'IMG_7228', 'Foto IMG_7228', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7228</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7228</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • saude_yande</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7229.jpg" class="card__img" alt="Foto IMG_7229" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7229.jpg', 'IMG_7229', 'Foto IMG_7229', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7229</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7229</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7230.jpg" class="card__img" alt="Espaço ZOE - Bancada" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7230.jpg', 'IMG_7230', 'Espaço ZOE - Bancada', 'Mesa de oficina com trabalhos artesanais')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7230</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço ZOE - Bancada</h3>
+      <p class="card__detalhe">Mesa de oficina com trabalhos artesanais</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7231.jpg" class="card__img" alt="Foto IMG_7231" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7231.jpg', 'IMG_7231', 'Foto IMG_7231', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7231</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7231</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7232.jpg" class="card__img" alt="Espaço ZOE - Materiais" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7232.jpg', 'IMG_7232', 'Espaço ZOE - Materiais', 'Pincéis, tintas e organizadores de arte')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7232</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço ZOE - Materiais</h3>
+      <p class="card__detalhe">Pincéis, tintas e organizadores de arte</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7233.jpg" class="card__img" alt="Foto IMG_7233" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7233.jpg', 'IMG_7233', 'Foto IMG_7233', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7233</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7233</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7234.jpg" class="card__img" alt="Foto IMG_7234" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7234.jpg', 'IMG_7234', 'Foto IMG_7234', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7234</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7234</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7235.jpg" class="card__img" alt="Foto IMG_7235" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7235.jpg', 'IMG_7235', 'Foto IMG_7235', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7235</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7235</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7236.jpg" class="card__img" alt="Espaço ZOE - Entrada/Capa" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7236.jpg', 'IMG_7236', 'Espaço ZOE - Entrada/Capa', 'Ateliê coletivo de artes e projetos sociais')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7236</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço ZOE - Entrada/Capa</h3>
+      <p class="card__detalhe">Ateliê coletivo de artes e projetos sociais</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7240.jpg" class="card__img" alt="Foto IMG_7240" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7240.jpg', 'IMG_7240', 'Foto IMG_7240', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7240</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7240</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7241.jpg" class="card__img" alt="Foto IMG_7241" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7241.jpg', 'IMG_7241', 'Foto IMG_7241', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7241</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7241</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7242.jpg" class="card__img" alt="Banheiro comum" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7242.jpg', 'IMG_7242', 'Banheiro comum', 'Banheiro de uso comum')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7242</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Banheiro comum</h3>
+      <p class="card__detalhe">Banheiro de uso comum</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7243.jpg" class="card__img" alt="Foto IMG_7243" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7243.jpg', 'IMG_7243', 'Foto IMG_7243', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7243</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7243</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="zoe_artes" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7244.jpg" class="card__img" alt="Foto IMG_7244" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7244.jpg', 'IMG_7244', 'Foto IMG_7244', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7244</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7244</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • zoe_artes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7245.jpg" class="card__img" alt="Foto IMG_7245" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7245.jpg', 'IMG_7245', 'Foto IMG_7245', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7245</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7245</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7246.jpg" class="card__img" alt="Foto IMG_7246" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7246.jpg', 'IMG_7246', 'Foto IMG_7246', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7246</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7246</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7247.jpg" class="card__img" alt="Foto IMG_7247" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7247.jpg', 'IMG_7247', 'Foto IMG_7247', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7247</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7247</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7248.jpg" class="card__img" alt="Foto IMG_7248" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7248.jpg', 'IMG_7248', 'Foto IMG_7248', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7248</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7248</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7251.jpg" class="card__img" alt="Foto IMG_7251" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7251.jpg', 'IMG_7251', 'Foto IMG_7251', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7251</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7251</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7253.jpg" class="card__img" alt="Foto IMG_7253" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7253.jpg', 'IMG_7253', 'Foto IMG_7253', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7253</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7253</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7255.jpg" class="card__img" alt="Foto IMG_7255" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7255.jpg', 'IMG_7255', 'Foto IMG_7255', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7255</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7255</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7256.jpg" class="card__img" alt="Foto IMG_7256" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7256.jpg', 'IMG_7256', 'Foto IMG_7256', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7256</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7256</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7257.jpg" class="card__img" alt="Foto IMG_7257" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7257.jpg', 'IMG_7257', 'Foto IMG_7257', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7257</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7257</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7258.jpg" class="card__img" alt="Foto IMG_7258" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7258.jpg', 'IMG_7258', 'Foto IMG_7258', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7258</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7258</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7259.jpg" class="card__img" alt="Convivência" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7259.jpg', 'IMG_7259', 'Convivência', 'Mesas de madeira e acabamento')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7259</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Convivência</h3>
+      <p class="card__detalhe">Mesas de madeira e acabamento</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7260.jpg" class="card__img" alt="Foto IMG_7260" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7260.jpg', 'IMG_7260', 'Foto IMG_7260', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7260</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7260</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7261.jpg" class="card__img" alt="Foto IMG_7261" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7261.jpg', 'IMG_7261', 'Foto IMG_7261', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7261</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7261</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7263.jpg" class="card__img" alt="Foto IMG_7263" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7263.jpg', 'IMG_7263', 'Foto IMG_7263', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7263</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7263</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7264.jpg" class="card__img" alt="Arquitetura" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7264.jpg', 'IMG_7264', 'Arquitetura', 'Detalhes arquitetônicos da galeria')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7264</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Arquitetura</h3>
+      <p class="card__detalhe">Detalhes arquitetônicos da galeria</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7265.jpg" class="card__img" alt="Foto IMG_7265" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7265.jpg', 'IMG_7265', 'Foto IMG_7265', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7265</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7265</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7266.jpg" class="card__img" alt="Foto IMG_7266" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7266.jpg', 'IMG_7266', 'Foto IMG_7266', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7266</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7266</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7268.jpg" class="card__img" alt="Circulação" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7268.jpg', 'IMG_7268', 'Circulação', 'Área de circulação interna')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7268</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Circulação</h3>
+      <p class="card__detalhe">Área de circulação interna</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7269.jpg" class="card__img" alt="Varanda piso superior" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7269.jpg', 'IMG_7269', 'Varanda piso superior', 'Toldo azul, guarda-corpo e vista verde')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7269</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Varanda piso superior</h3>
+      <p class="card__detalhe">Toldo azul, guarda-corpo e vista verde</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7270.jpg" class="card__img" alt="Varanda piso superior (aberta)" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7270.jpg', 'IMG_7270', 'Varanda piso superior (aberta)', 'Espaço aberto da varanda no piso superior')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7270</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Varanda piso superior (aberta)</h3>
+      <p class="card__detalhe">Espaço aberto da varanda no piso superior</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7271.jpg" class="card__img" alt="Varanda" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7271.jpg', 'IMG_7271', 'Varanda', 'Varanda da galeria')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7271</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Varanda</h3>
+      <p class="card__detalhe">Varanda da galeria</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7272.jpg" class="card__img" alt="Foto IMG_7272" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7272.jpg', 'IMG_7272', 'Foto IMG_7272', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7272</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7272</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7273.jpg" class="card__img" alt="Foto IMG_7273" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7273.jpg', 'IMG_7273', 'Foto IMG_7273', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7273</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7273</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="arquitetura_varanda" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7274.jpg" class="card__img" alt="Foto IMG_7274" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7274.jpg', 'IMG_7274', 'Foto IMG_7274', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7274</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7274</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • arquitetura_varanda</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7279.jpg" class="card__img" alt="Foto IMG_7279" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7279.jpg', 'IMG_7279', 'Foto IMG_7279', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7279</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7279</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7280.jpg" class="card__img" alt="Foto IMG_7280" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7280.jpg', 'IMG_7280', 'Foto IMG_7280', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7280</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7280</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7281.jpg" class="card__img" alt="Foto IMG_7281" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7281.jpg', 'IMG_7281', 'Foto IMG_7281', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7281</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7281</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7283.jpg" class="card__img" alt="Foto IMG_7283" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7283.jpg', 'IMG_7283', 'Foto IMG_7283', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7283</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7283</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7284.jpg" class="card__img" alt="Foto IMG_7284" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7284.jpg', 'IMG_7284', 'Foto IMG_7284', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7284</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7284</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7285.jpg" class="card__img" alt="Yandê - Recepção" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7285.jpg', 'IMG_7285', 'Yandê - Recepção', 'Recepção do espaço')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7285</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Yandê - Recepção</h3>
+      <p class="card__detalhe">Recepção do espaço</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7286.jpg" class="card__img" alt="Yandê - Recepção / Box Modelo" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7286.jpg', 'IMG_7286', 'Yandê - Recepção / Box Modelo', 'Sala montada para atendimento e recepção')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7286</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Yandê - Recepção / Box Modelo</h3>
+      <p class="card__detalhe">Sala montada para atendimento e recepção</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7287.jpg" class="card__img" alt="Espaço C - Banheiro Privativo" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7287.jpg', 'IMG_7287', 'Espaço C - Banheiro Privativo', 'Banheiro interno exclusivo da sala C')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7287</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço C - Banheiro Privativo</h3>
+      <p class="card__detalhe">Banheiro interno exclusivo da sala C</p>
+      <span class="card__dim">5184x3456 px • salas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7288.jpg" class="card__img" alt="Espaço C - Interior" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7288.jpg', 'IMG_7288', 'Espaço C - Interior', 'Piso superior, sala privativa')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7288</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço C - Interior</h3>
+      <p class="card__detalhe">Piso superior, sala privativa</p>
+      <span class="card__dim">5184x3456 px • salas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7289.jpg" class="card__img" alt="Foto IMG_7289" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7289.jpg', 'IMG_7289', 'Foto IMG_7289', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7289</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7289</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7291.jpg" class="card__img" alt="Foto IMG_7291" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7291.jpg', 'IMG_7291', 'Foto IMG_7291', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7291</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7291</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7292.jpg" class="card__img" alt="Espaço A - Fachada no Corredor" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7292.jpg', 'IMG_7292', 'Espaço A - Fachada no Corredor', 'Térreo, vitrine voltada para o fluxo principal')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7292</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço A - Fachada no Corredor</h3>
+      <p class="card__detalhe">Térreo, vitrine voltada para o fluxo principal</p>
+      <span class="card__dim">5184x3456 px • salas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7293.jpg" class="card__img" alt="Área comum térreo" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7293.jpg', 'IMG_7293', 'Área comum térreo', 'Mesas altas e circulação do térreo')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7293</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Área comum térreo</h3>
+      <p class="card__detalhe">Mesas altas e circulação do térreo</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7294.jpg" class="card__img" alt="Entrada e escada" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7294.jpg', 'IMG_7294', 'Entrada e escada', 'Hall de entrada e acesso ao piso superior')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7294</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Entrada e escada</h3>
+      <p class="card__detalhe">Hall de entrada e acesso ao piso superior</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7295.jpg" class="card__img" alt="Espaço B - Fachada no Corredor" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7295.jpg', 'IMG_7295', 'Espaço B - Fachada no Corredor', 'Térreo, ao lado da área de mesas')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7295</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço B - Fachada no Corredor</h3>
+      <p class="card__detalhe">Térreo, ao lado da área de mesas</p>
+      <span class="card__dim">5184x3456 px • salas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7296.jpg" class="card__img" alt="Corredor térreo" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7296.jpg', 'IMG_7296', 'Corredor térreo', 'Corredor principal com vitrines de vidro')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7296</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Corredor térreo</h3>
+      <p class="card__detalhe">Corredor principal com vitrines de vidro</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7297.jpg" class="card__img" alt="Foto IMG_7297" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7297.jpg', 'IMG_7297', 'Foto IMG_7297', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7297</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7297</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7298.jpg" class="card__img" alt="Foto IMG_7298" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7298.jpg', 'IMG_7298', 'Foto IMG_7298', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7298</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7298</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7299.jpg" class="card__img" alt="Espaço A - Interior" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7299.jpg', 'IMG_7299', 'Espaço A - Interior', 'Piso, paredes claras e iluminação')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7299</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço A - Interior</h3>
+      <p class="card__detalhe">Piso, paredes claras e iluminação</p>
+      <span class="card__dim">5184x3456 px • salas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7300.jpg" class="card__img" alt="Espaço B - Interior" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7300.jpg', 'IMG_7300', 'Espaço B - Interior', 'Vista interna com vitrine frontal')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7300</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Espaço B - Interior</h3>
+      <p class="card__detalhe">Vista interna com vitrine frontal</p>
+      <span class="card__dim">5184x3456 px • salas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7301.jpg" class="card__img" alt="Foto IMG_7301" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7301.jpg', 'IMG_7301', 'Foto IMG_7301', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7301</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7301</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7302.jpg" class="card__img" alt="Foto IMG_7302" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7302.jpg', 'IMG_7302', 'Foto IMG_7302', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7302</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7302</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7303.jpg" class="card__img" alt="Cowork / Corredor" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7303.jpg', 'IMG_7303', 'Cowork / Corredor', 'Mesas de trabalho e convivência compartilhada')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7303</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Cowork / Corredor</h3>
+      <p class="card__detalhe">Mesas de trabalho e convivência compartilhada</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7304.jpg" class="card__img" alt="Foto IMG_7304" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7304.jpg', 'IMG_7304', 'Foto IMG_7304', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7304</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7304</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="salas_corredores" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7305.jpg" class="card__img" alt="Foto IMG_7305" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7305.jpg', 'IMG_7305', 'Foto IMG_7305', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7305</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7305</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • salas_corredores</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="clinica_odonto" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7306.jpg" class="card__img" alt="Foto IMG_7306" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7306.jpg', 'IMG_7306', 'Foto IMG_7306', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7306</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7306</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • clinica_odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="clinica_odonto" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7307.jpg" class="card__img" alt="Foto IMG_7307" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7307.jpg', 'IMG_7307', 'Foto IMG_7307', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7307</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7307</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • clinica_odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7309.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7309.jpg', 'IMG_7309', 'Consultório Odontológico', 'Jaleco e área clínica')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7309</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Jaleco e área clínica</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7310.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7310.jpg', 'IMG_7310', 'Consultório Odontológico', 'Equipamentos odontológicos')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7310</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Equipamentos odontológicos</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7311.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7311.jpg', 'IMG_7311', 'Consultório Odontológico', 'Negatoscópio e moldes')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7311</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Negatoscópio e moldes</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7312.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7312.jpg', 'IMG_7312', 'Consultório Odontológico', 'Instrumentais clínicos')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7312</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Instrumentais clínicos</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7315.jpg" class="card__img" alt="Banheiro comum" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7315.jpg', 'IMG_7315', 'Banheiro comum', 'Instalações sanitárias de apoio')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7315</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Banheiro comum</h3>
+      <p class="card__detalhe">Instalações sanitárias de apoio</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="clinica_odonto" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7317.jpg" class="card__img" alt="Foto IMG_7317" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7317.jpg', 'IMG_7317', 'Foto IMG_7317', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7317</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7317</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • clinica_odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7318.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7318.jpg', 'IMG_7318', 'Consultório Odontológico', 'Mesa de trabalho clínico')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7318</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Mesa de trabalho clínico</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7319.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7319.jpg', 'IMG_7319', 'Consultório Odontológico', 'Cadeira e iluminação clínica')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7319</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Cadeira e iluminação clínica</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7320.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7320.jpg', 'IMG_7320', 'Consultório Odontológico', 'Detalhes de materiais')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7320</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Detalhes de materiais</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7321.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7321.jpg', 'IMG_7321', 'Consultório Odontológico', 'Prateleiras e organizadores')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7321</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Prateleiras e organizadores</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7324.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7324.jpg', 'IMG_7324', 'Consultório Odontológico', 'Mesa clínica')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7324</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Mesa clínica</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7325.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7325.jpg', 'IMG_7325', 'Consultório Odontológico', 'Mesa clínica')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7325</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Mesa clínica</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7326.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7326.jpg', 'IMG_7326', 'Consultório Odontológico', 'Mesa clínica')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7326</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Mesa clínica</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7327.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7327.jpg', 'IMG_7327', 'Consultório Odontológico', 'Mesa clínica')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7327</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Mesa clínica</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="odonto" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7328.jpg" class="card__img" alt="Consultório Odontológico" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7328.jpg', 'IMG_7328', 'Consultório Odontológico', 'Mesa clínica')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7328</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Consultório Odontológico</h3>
+      <p class="card__detalhe">Mesa clínica</p>
+      <span class="card__dim">5184x3456 px • odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="clinica_odonto" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7329.jpg" class="card__img" alt="Foto IMG_7329" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7329.jpg', 'IMG_7329', 'Foto IMG_7329', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7329</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7329</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • clinica_odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="clinica_odonto" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7330.jpg" class="card__img" alt="Foto IMG_7330" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7330.jpg', 'IMG_7330', 'Foto IMG_7330', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7330</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7330</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • clinica_odonto</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="doces_elisa_placas" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7331.jpg" class="card__img" alt="Foto IMG_7331" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7331.jpg', 'IMG_7331', 'Foto IMG_7331', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7331</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7331</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • doces_elisa_placas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="doces_elisa_placas" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7332.jpg" class="card__img" alt="Foto IMG_7332" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7332.jpg', 'IMG_7332', 'Foto IMG_7332', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7332</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7332</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • doces_elisa_placas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="doces_elisa_placas" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7333.jpg" class="card__img" alt="Foto IMG_7333" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7333.jpg', 'IMG_7333', 'Foto IMG_7333', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7333</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7333</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • doces_elisa_placas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="doces_elisa_placas" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7334.jpg" class="card__img" alt="Foto IMG_7334" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7334.jpg', 'IMG_7334', 'Foto IMG_7334', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7334</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7334</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • doces_elisa_placas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="doces_elisa_placas" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7335.jpg" class="card__img" alt="Foto IMG_7335" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7335.jpg', 'IMG_7335', 'Foto IMG_7335', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7335</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7335</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • doces_elisa_placas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7336.jpg" class="card__img" alt="Doces de Elisa - Fachada/Vitrine" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7336.jpg', 'IMG_7336', 'Doces de Elisa - Fachada/Vitrine', 'Vitrine para a rua e calçada')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7336</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Doces de Elisa - Fachada/Vitrine</h3>
+      <p class="card__detalhe">Vitrine para a rua e calçada</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7339.jpg" class="card__img" alt="Doces de Elisa - Interior" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7339.jpg', 'IMG_7339', 'Doces de Elisa - Interior', 'Interior do estabelecimento')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7339</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Doces de Elisa - Interior</h3>
+      <p class="card__detalhe">Interior do estabelecimento</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7341.jpg" class="card__img" alt="Doces de Elisa - Vitrine" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7341.jpg', 'IMG_7341', 'Doces de Elisa - Vitrine', 'Vitrine de produtos')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7341</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Doces de Elisa - Vitrine</h3>
+      <p class="card__detalhe">Vitrine de produtos</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7343.jpg" class="card__img" alt="Doces de Elisa - Café" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7343.jpg', 'IMG_7343', 'Doces de Elisa - Café', 'Xícara de café e acompanhamentos')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7343</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Doces de Elisa - Café</h3>
+      <p class="card__detalhe">Xícara de café e acompanhamentos</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="doces_elisa_placas" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7345.jpg" class="card__img" alt="Foto IMG_7345" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7345.jpg', 'IMG_7345', 'Foto IMG_7345', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7345</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7345</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • doces_elisa_placas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="lojistas" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7346.jpg" class="card__img" alt="Doces de Elisa - Doces finos" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7346.jpg', 'IMG_7346', 'Doces de Elisa - Doces finos', 'Doces individuais e sobremesas')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7346</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Doces de Elisa - Doces finos</h3>
+      <p class="card__detalhe">Doces individuais e sobremesas</p>
+      <span class="card__dim">5184x3456 px • lojistas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="doces_elisa_placas" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7347.jpg" class="card__img" alt="Foto IMG_7347" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7347.jpg', 'IMG_7347', 'Foto IMG_7347', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7347</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7347</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • doces_elisa_placas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7348.jpg" class="card__img" alt="Placas do hall (geral)" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7348.jpg', 'IMG_7348', 'Placas do hall (geral)', 'Painel com identificação das salas')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7348</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Placas do hall (geral)</h3>
+      <p class="card__detalhe">Painel com identificação das salas</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7349.jpg" class="card__img" alt="Placas do hall (detalhe)" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7349.jpg', 'IMG_7349', 'Placas do hall (detalhe)', 'Identificação dos negócios instalados')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7349</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Placas do hall (detalhe)</h3>
+      <p class="card__detalhe">Identificação dos negócios instalados</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7350.jpg" class="card__img" alt="Placas do hall (inferior)" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7350.jpg', 'IMG_7350', 'Placas do hall (inferior)', 'Painel de salas')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7350</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Placas do hall (inferior)</h3>
+      <p class="card__detalhe">Painel de salas</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7351.jpg" class="card__img" alt="Placas do hall (superior)" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7351.jpg', 'IMG_7351', 'Placas do hall (superior)', 'Painel de salas')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7351</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Placas do hall (superior)</h3>
+      <p class="card__detalhe">Painel de salas</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="doces_elisa_placas" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7352.jpg" class="card__img" alt="Foto IMG_7352" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7352.jpg', 'IMG_7352', 'Foto IMG_7352', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7352</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7352</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • doces_elisa_placas</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7354.jpg" class="card__img" alt="Foto IMG_7354" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7354.jpg', 'IMG_7354', 'Foto IMG_7354', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7354</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7354</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7355.jpg" class="card__img" alt="Foto IMG_7355" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7355.jpg', 'IMG_7355', 'Foto IMG_7355', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7355</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7355</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7356.jpg" class="card__img" alt="Foto IMG_7356" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7356.jpg', 'IMG_7356', 'Foto IMG_7356', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7356</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7356</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7357.jpg" class="card__img" alt="Fachada diagonal" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7357.jpg', 'IMG_7357', 'Fachada diagonal', 'Entrada principal com escadaria de acesso')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7357</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Fachada diagonal</h3>
+      <p class="card__detalhe">Entrada principal com escadaria de acesso</p>
+      <span class="card__dim">5184x3456 px • fachada</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7358.jpg" class="card__img" alt="Foto IMG_7358" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7358.jpg', 'IMG_7358', 'Foto IMG_7358', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7358</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7358</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7359.jpg" class="card__img" alt="Foto IMG_7359" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7359.jpg', 'IMG_7359', 'Foto IMG_7359', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7359</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7359</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7360.jpg" class="card__img" alt="Foto IMG_7360" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7360.jpg', 'IMG_7360', 'Foto IMG_7360', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7360</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7360</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7361.jpg" class="card__img" alt="Acesso pela escada" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7361.jpg', 'IMG_7361', 'Acesso pela escada', 'Escada externa e entrada da galeria')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7361</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Acesso pela escada</h3>
+      <p class="card__detalhe">Escada externa e entrada da galeria</p>
+      <span class="card__dim">5184x3456 px • fachada</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7362.jpg" class="card__img" alt="Foto IMG_7362" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7362.jpg', 'IMG_7362', 'Foto IMG_7362', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7362</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7362</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7363.jpg" class="card__img" alt="Fachada perspectiva" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7363.jpg', 'IMG_7363', 'Fachada perspectiva', 'Ângulo em perspectiva vertical')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7363</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Fachada perspectiva</h3>
+      <p class="card__detalhe">Ângulo em perspectiva vertical</p>
+      <span class="card__dim">5184x3456 px • fachada</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7364.jpg" class="card__img" alt="Foto IMG_7364" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7364.jpg', 'IMG_7364', 'Foto IMG_7364', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7364</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7364</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7365.jpg" class="card__img" alt="Letreiro contra-plongée" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7365.jpg', 'IMG_7365', 'Letreiro contra-plongée', 'Ângulo inferior do letreiro metálico')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7365</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Letreiro contra-plongée</h3>
+      <p class="card__detalhe">Ângulo inferior do letreiro metálico</p>
+      <span class="card__dim">5184x3456 px • fachada</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ambientes" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7366.jpg" class="card__img" alt="Marca na arquitetura" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7366.jpg', 'IMG_7366', 'Marca na arquitetura', 'Detalhe da identificação Lemura')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7366</span>
+        <span class="card__badge card__badge--ok">PUBLICADA</span>
+      </div>
+      <h3 class="card__titulo">Marca na arquitetura</h3>
+      <p class="card__detalhe">Detalhe da identificação Lemura</p>
+      <span class="card__dim">5184x3456 px • ambientes</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada" data-conhecido="true">
+    <img src="assets/catalogo/thumbs/IMG_7367.jpg" class="card__img" alt="Fachada frontal" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7367.jpg', 'IMG_7367', 'Fachada frontal', 'Letreiro Lemura e entrada de vidro (dia)')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7367</span>
+        <span class="card__badge">MAPEADA</span>
+      </div>
+      <h3 class="card__titulo">Fachada frontal</h3>
+      <p class="card__detalhe">Letreiro Lemura e entrada de vidro (dia)</p>
+      <span class="card__dim">5184x3456 px • fachada</span>
+    </div>
+  </div>
+
+  <div class="card" data-cat="fachada_externa" data-conhecido="false">
+    <img src="assets/catalogo/thumbs/IMG_7368.jpg" class="card__img" alt="Foto IMG_7368" loading="lazy" onclick="abrirModal('assets/catalogo/thumbs/IMG_7368.jpg', 'IMG_7368', 'Foto IMG_7368', 'Foto da sessão oficial de 16/12/2025')">
+    <div class="card__corpo">
+      <div class="card__cabeca">
+        <span class="card__chave">IMG_7368</span>
+        <span class="card__badge">ACERVO</span>
+      </div>
+      <h3 class="card__titulo">Foto IMG_7368</h3>
+      <p class="card__detalhe">Foto da sessão oficial de 16/12/2025</p>
+      <span class="card__dim">5184x3456 px • fachada_externa</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal" id="modal" onclick="fecharModal()">
+  <button class="modal__fechar" onclick="fecharModal()">×</button>
+  <div class="modal__conteudo" onclick="event.stopPropagation()">
+    <img src="" id="modalImg" class="modal__img" alt="Visualização">
+    <div class="modal__info">
+      <h2 id="modalTitulo" style="font-size: 1.25rem;"></h2>
+      <p id="modalDetalhe" style="color: var(--cor-mutado); font-size: 0.95rem; margin-top: 0.3rem;"></p>
+      <p id="modalChave" style="font-family: 'Space Mono', monospace; color: var(--cor-destaque); font-size: 0.85rem; margin-top: 0.3rem;"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const filtros = document.querySelectorAll('.btn-filtro');
+  const cards = document.querySelectorAll('.card');
+
+  filtros.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtros.forEach(b => b.classList.remove('ativo'));
+      btn.classList.add('ativo');
+      const f = btn.dataset.filtro;
+
+      cards.forEach(card => {
+        if (f === 'todos') {
+          card.style.display = 'flex';
+        } else if (f === 'conhecido') {
+          card.style.display = card.dataset.conhecido === 'true' ? 'flex' : 'none';
+        } else if (card.dataset.cat.includes(f)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  function abrirModal(src, chave, titulo, detalhe) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('modalTitulo').textContent = titulo;
+    document.getElementById('modalDetalhe').textContent = detalhe;
+    document.getElementById('modalChave').textContent = chave;
+    document.getElementById('modal').classList.add('aberto');
+  }
+
+  function fecharModal() {
+    document.getElementById('modal').classList.remove('aberto');
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') fecharModal();
+  });
+</script>
+</body>
+</html>

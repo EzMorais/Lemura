@@ -17,6 +17,17 @@ desktop.ini
 .idea/
 *.swp
 
+# Python
+__pycache__/
+*.pyc
+
 # Logs
 *.log
 npm-debug.log*
+
+# Deploy / Vercel
+.vercel/
+
+# Agent workspaces
+.agents/
+.claude/

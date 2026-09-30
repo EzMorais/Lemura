@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lojas da Galeria Lemura | Vitrine de negócios em Porangaba/SP</title>
+<meta name="description" content="Conheça as lojas, serviços e profissionais da Galeria Lemura em Porangaba/SP. Alimentação, saúde, beleza, serviços, varejo e cowork — fale direto com cada negócio pelo WhatsApp.">
+<meta name="robots" content="index, follow">
+
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  base-uri 'self';
+  object-src 'none';
+  form-action 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  font-src 'self';
+  img-src 'self';
+  connect-src 'self';
+  upgrade-insecure-requests;
+">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lojas da Galeria Lemura | Vitrine de negócios em Porangaba/SP">
+<meta property="og:description" content="A vitrine dos negócios da Galeria Lemura. Descubra as lojas, veja produtos e serviços e fale direto pelo WhatsApp.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://lemura.com.br/assets/og-image.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1067">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lojas da Galeria Lemura">
+<meta name="twitter:description" content="A vitrine dos negócios da Galeria Lemura, em Porangaba/SP.">
+<meta name="twitter:image" content="https://lemura.com.br/assets/og-image.jpg">
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/vitrine.css">
+</head>
+<body class="lm-body">
+
+<a class="lm-pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="lm-pagina">
+
+  <div id="lm-header" style="min-height:68px"></div>
+
+  <main id="conteudo">
+
+    <div id="lm-aviso"></div>
+
+    <!-- ABERTURA -->
+    <section class="lm-bloco reveal" style="margin-bottom:.75rem">
+      <p class="lm-eyebrow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2l1.5 5h9L18 2"/><path d="M4 7h16l-1 14H5L4 7z"/></svg>
+        Vitrine Lemura
+      </p>
+      <h1 class="lm-titulo">Os negócios que ocupam a galeria.</h1>
+      <p class="lm-subtitulo">Encontre lojas, serviços e profissionais da Galeria Lemura. Cada página reúne informações sobre o negócio e as formas de contato disponíveis.</p>
+
+      <div id="lm-numeros" class="lm-chips" style="margin-bottom:0"></div>
+    </section>
+
+    <!-- BUSCA E FILTROS -->
+    <section class="lm-filtros" aria-label="Buscar e filtrar lojas">
+      <div class="lm-busca">
+        <span class="lm-busca__icone">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5" stroke-linecap="round"/></svg>
+        </span>
+        <input type="search" id="lm-busca" placeholder="Buscar por loja, produto ou serviço…" autocomplete="off" aria-label="Buscar loja, produto ou serviço">
+        <button type="button" class="lm-busca__limpar" id="lm-limpar" aria-label="Limpar busca">×</button>
+      </div>
+      <div class="lm-filtros__linha" id="lm-filtros" role="group" aria-label="Filtrar por segmento"></div>
+      <p class="lm-resultado" id="lm-resultado" aria-live="polite"></p>
+    </section>
+
+    <!-- GRADE DE LOJAS -->
+    <section aria-label="Lojas da galeria" style="margin-top:.75rem">
+      <div class="lm-grade lm-grade--3" id="lm-grade"></div>
+      <div class="lm-secao" id="lm-sem-resultado" hidden>
+        <p class="lm-vazio" style="margin:0">
+          Nenhuma loja encontrada com esse termo.<br>
+          <button type="button" class="lm-btn lm-btn--linha" id="lm-resetar" style="margin-top:1rem">Ver todas as lojas</button>
+        </p>
+      </div>
+    </section>
+
+    <!-- CHAMADA -->
+    <section class="lm-cta-galeria reveal" style="margin-top:.75rem">
+      <div>
+        <p class="lm-eyebrow lm-eyebrow--claro">Espaço disponível</p>
+        <h2>Sua marca pode ser a próxima desta lista.</h2>
+        <p>Quem aluga um espaço na Lemura ganha uma página própria nesta vitrine, sem custo adicional — com produtos, contato e link para divulgar onde quiser.</p>
+      </div>
+      <div class="lm-cta-galeria__acoes">
+        <a class="lm-btn lm-btn--claro" href="anuncie.html">Quero divulgar meu negócio</a>
+        <a class="lm-btn lm-btn--fantasma" href="index.html#disponibilidade">Ver disponibilidade</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="lm-rodape"></div>
+
+</div>
+
+<div id="lm-flutuante"></div>
+
+<script src="js/lemura-config.js"></script>
+<script src="data/lojistas.js"></script>
+<script src="js/lemura-templates.js"></script>
+<script src="js/lemura-core.js"></script>
+<script src="js/lojas.js"></script>
+</body>
+</html>

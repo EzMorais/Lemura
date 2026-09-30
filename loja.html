@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loja | Galeria Lemura</title>
+<meta name="description" content="Página de loja da Galeria Lemura, em Porangaba/SP.">
+<meta name="robots" content="noindex, follow">
+
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  base-uri 'self';
+  object-src 'none';
+  form-action 'self';
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  font-src 'self';
+  img-src 'self';
+  connect-src 'self';
+  upgrade-insecure-requests;
+">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/vitrine.css">
+</head>
+<body class="lm-body">
+
+<!--
+  PÁGINA DINÂMICA DE PREVIEW
+  ---------------------------------------------------------------------
+  Abre uma loja pelo endereço: loja.html?loja=slug-da-loja
+
+  Serve para conferir uma loja recém-cadastrada sem precisar gerar as
+  páginas estáticas. O endereço definitivo, que é o divulgado e o
+  indexado pelo Google, é /lojas/<slug>/ — gerado por
+  `node scripts/gerar.mjs`. Por isso esta página é `noindex`.
+-->
+
+<a class="lm-pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="lm-pagina">
+
+  <div id="lm-header" style="min-height:68px"></div>
+
+  <main id="conteudo"></main>
+
+  <div id="lm-rodape"></div>
+
+</div>
+
+<div id="lm-flutuante"></div>
+
+<script src="js/lemura-config.js"></script>
+<script src="data/lojistas.js"></script>
+<script src="js/lemura-templates.js"></script>
+<script src="js/lemura-core.js"></script>
+<script src="js/loja.js"></script>
+</body>
+</html>

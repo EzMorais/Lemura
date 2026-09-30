@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 72" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Símbolo Lemura: três pessoas</title>
+  <g stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+    <circle cx="19" cy="15" r="8" fill="#EF72B5" stroke="#EF72B5"/>
+    <path d="M19 30 8 39m11-9 11 9M19 31l-8 18m8-18 9 18" stroke="#EF72B5"/>
+    <circle cx="48" cy="20" r="7" fill="#48C9E8" stroke="#48C9E8"/>
+    <path d="M48 33 39 40m9-7 9 7m-9-6-7 17m7-17 8 17" stroke="#48C9E8"/>
+    <circle cx="77" cy="15" r="8" fill="#9572E9" stroke="#9572E9"/>
+    <path d="M77 30 66 39m11-9 11 9m-11-8-9 18m9-18 8 18" stroke="#9572E9"/>
+  </g>
+</svg>
