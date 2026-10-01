@@ -7,8 +7,9 @@ Refinar o site atual da Galeria Lemura para apresentar primeiro o empreendimento
 ## Direção visual aprovada em conversa
 
 - Usar a identidade monocromática enviada pela pessoa: cinza claro `#D9D9D9`, cinza médio `#8E8E8E` e grafite `#2B2B2B`, com branco/off-white para fundos e respiro.
+- Adotar uma direção editorial inspirada em revistas de moda: composição de fotografia em destaque, tipografia expressiva e elegante, grelha editorial e hierarquia visual precisa. A inspiração se aplica à direção de arte do empreendimento; o conteúdo continua sendo sobre a Galeria Lemura, suas salas e seus lojistas, sem modelos, roupas ou funcionalidades de moda.
 - Retirar os azuis e cores de destaque atuais da identidade visual. Fotografias permanecem com cor natural, sem filtro azul ou conversão forçada para escala de cinza.
-- Usar tipografia editorial para títulos, texto simples e legível para navegação e conteúdo, linhas finas e espaçamento amplo. Evitar o tratamento visual de landing page com um único bloco de conversão.
+- Usar tipografia editorial para títulos, texto simples e legível para navegação e conteúdo, linhas finas e espaçamento amplo. Evitar o tratamento visual de landing page com um único bloco de conversão ou ornamentos que prejudiquem a leitura.
 - Usar fotos reais existentes. Dar prioridade à fachada e a ambientes reconhecíveis; evitar cortes que escondam contexto e evitar repetir a mesma foto em vários cartões. As fotos originais em `C:\Users\morai\OneDrive\Desktop\awd` são referência; o site deve usar versões já otimizadas no repositório ou gerar derivados web otimizados sem alterar os originais.
 
 ## Estrutura e comportamento
