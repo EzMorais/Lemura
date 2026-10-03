@@ -7,7 +7,6 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "gerar": "node scripts/gerar.mjs",
-    "build": "node scripts/gerar.mjs",
     "site": "node scripts/servidor.mjs",
     "publicar": "node scripts/gerar.mjs && node scripts/servidor.mjs"
   },
